@@ -15,7 +15,7 @@ class bcolors:
 	BLUE = '\033[34m'
 
 
-def prints(x,level_actual=1,level_constant=1,fname="debug"):
+def prints(x,level_actual=1,level_constant=1,fname="debug", color=bcolors.OKGREEN):
 	#print("[@"+sys._getframe().f_code.co_name+"]")
 	if level_actual>=level_constant:
 		try:
@@ -24,7 +24,7 @@ def prints(x,level_actual=1,level_constant=1,fname="debug"):
 			r = re.search(r"\((.*)\)", s).group(1)
 			if fname is not "debug":
 				r = r[0:-6]
-			print("{}[@{}] {} = {}{}".format(bcolors.OKGREEN,fname,r,x,bcolors.ENDC))
+			print("{}[@{}] {} = {}{}".format(color,fname,r,x,bcolors.ENDC))
 		except:
 			print("Deb prints error. Value:",x)
 
