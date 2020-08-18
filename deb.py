@@ -15,7 +15,7 @@ class bcolors:
 	BLUE = '\033[34m'
 
 
-def prints(x,level_actual=1,level_constant=1,fname="debug", color=bcolors.OKGREEN):
+def prints(x,fname="debug", level_actual=1,level_constant=1,color=bcolors.OKGREEN):
 	#print("[@"+sys._getframe().f_code.co_name+"]")
 	if level_actual>=level_constant:
 		try:
